@@ -8,12 +8,16 @@ import { DatepickerComponent } from './components/datepicker/datepicker.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { FormsModule } from '@angular/forms';
+import { RxjsPracticeComponent } from './components/rxjs-practice/rxjs-practice.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    RxjsPracticeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
