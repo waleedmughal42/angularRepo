@@ -10,6 +10,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { FormsModule } from '@angular/forms';
 import { RxjsPracticeComponent } from './components/rxjs-practice/rxjs-practice.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { FilemanagerComponent } from './components/filemanager/filemanager.component';
+import { DxButtonModule, DxFileManagerModule, DxPopupModule } from 'devextreme-angular';
+
 
 @NgModule({
   declarations: [
@@ -17,14 +20,18 @@ import { HeaderComponent } from './shared/header/header.component';
     HomeComponent,
     DatepickerComponent,
     RxjsPracticeComponent,
-    HeaderComponent
+    HeaderComponent,
+    FilemanagerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
-    FormsModule
+    FormsModule,
+    DxFileManagerModule,
+    DxPopupModule,
+    DxButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

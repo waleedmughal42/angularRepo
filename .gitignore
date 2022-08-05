@@ -4,7 +4,7 @@
 /dist
 /tmp
 /out-tsc
-# Only exists if Bazel was run
+# Only exists if Bazel was run 
 /bazel-out
 
 # dependencies
@@ -44,3 +44,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+#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 3sep token
+
