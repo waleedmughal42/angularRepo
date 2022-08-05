@@ -1,4 +1,47 @@
 <app-header></app-header>
 <dx-file-manager id="fileManager"
 [fileSystemProvider]="fileItems">
+(onCurrentDirectoryChanged)="onDirectoryChanged($event)"
+  (onSelectedFileOpened)="fileManager_onSelectedFileOpened($event)" (onItemDownloading)="onItemDownloading($event)"
+  (onContextMenuItemClick)="onContextMenuItemClick($event,processFileModal,shareFileModal)"
+  (onItemDeleting)="onItemDeleting($event)" (onSelectionChanged)="onSelectionChanged($event)"
+  (onDirectoryCreating)="onDirectoryCreating($event)">
+  <dxo-permissions [create]="true" [copy]="false" [move]="false" [delete]="true" [rename]="false" [upload]="true"
+    [download]="true">
+  </dxo-permissions>
+  <dxo-toolbar>
+    <dxi-item name="showNavPane" [visible]="true"></dxi-item>
+    <dxi-item name="separator"></dxi-item>
+    <dxi-item name="create"></dxi-item>
+    <dxi-item widget="dxButton" name="dxButton" class="upload-btn"
+      icon="save"><i class="dx-icon dx-icon-upload"></i> Upload Files</dxi-item>
+
+    <!-- <dxi-item name="upload"  (onFileUploaded)="onFileUploaded($event)" (click)="check(uploadModal)"></dxi-item> -->
+    <dxi-item name="refresh"></dxi-item>
+    <dxi-item name="switchView"></dxi-item>
+  </dxo-toolbar>
+  <dxo-context-menu>
+    <!-- <dxi-item name="download" *ngIf="!bFetchDeletedFiles"></dxi-item> -->
+    <!-- <dxi-item name="move" disabled="true"></dxi-item> -->
+    <!-- <dxi-item name="rename" *ngIf="!bFetchDeletedFiles && bHomeFolder"></dxi-item> -->
+    <dxi-item name="delete" beginGroup="true"></dxi-item>
+    <dxi-item icon="doc" text="Process File" beginGroup="true"></dxi-item>
+    <dxi-item icon="share" text="Share" beginGroup="true"></dxi-item>
+    <!-- <dxi-item name="restore" beginGroup="true" text="Restore" icon="redo" *ngIf="bFetchDeletedFiles"></dxi-item> -->
+    <!-- <dxi-item name="delete permenantly" text="Delete Permenantly" icon="trash" *ngIf="bFetchDeletedFiles"></dxi-item> -->
+  </dxo-context-menu>
+  <dxo-item-view [showParentFolder]="false">
+    <dxo-details>
+
+      <!-- <dxi-column dataField="status"></dxi-column> -->
+      <dxi-column dataField="thumbnail"></dxi-column>
+      <dxi-column dataField="name"></dxi-column>
+      <!-- <dxi-column dataField="reviewStatus" caption="Review Status"></dxi-column> -->
+      <!-- <dxi-column dataField="status" caption="Tag Generation"></dxi-column> -->
+      <!-- <dxi-column dataField="questions" caption="# Questions" width="100" alignment="left"></dxi-column> -->
+      <dxi-column dataField="dateModified" width="150"></dxi-column>
+      <dxi-column dataField="size" width="150" alignment="left"></dxi-column>
+
+    </dxo-details>
+  </dxo-item-view>
 </dx-file-manager>

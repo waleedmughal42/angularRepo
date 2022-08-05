@@ -119,5 +119,33 @@ export class FilemanagerComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
+  onDirectoryChanged(oIncommingEvent:any)
+  {
+    console.log("incomming directory ===>>>", oIncommingEvent);
+  }
+  fileManager_onSelectedFileOpened(oIncommingEvent:any)
+  {
+    console.log("incomming file ===>>>", oIncommingEvent);
+  }
+  onItemDownloading(oIncommingEvent:any)
+  {
+    console.log("Item downloading ==>>>>>",oIncommingEvent);
+    
+  }
+  onContextMenuItemClick(oIncommingEvent:any, oIncommingFile:any,shareFileModal:any)
+  {
+    console.log("Item clicked ==>>>>>",oIncommingEvent);
+  }
+  onItemDeleting(oIncommingEvent:any)
+  {
+    console.log("item deleting ==>>>>", oIncommingEvent);
+  }
+  onSelectionChanged(oIncommingEvent:any)
+  {
+    console.log("onSelectionChanged==>>>>", oIncommingEvent);
+  }
+  onDirectoryCreating(oIncommingEvent:any)
+  {
+    console.log("onDirectoryCreating==>>>>", oIncommingEvent);
+  }
 }
